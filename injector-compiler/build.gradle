@@ -16,11 +16,11 @@ apply plugin: 'kotlin-android-extensions'
 
 ext {
     bintrayRepo = 'Android'
-    bintrayName = 'Injector'
+    bintrayName = 'Injector Compiler'
 
     publishedGroupId = 'com.artear.injector'
-    libraryName = 'Injector'
-    artifact = 'injector'
+    libraryName = 'Injector Compiler'
+    artifact = 'injector-compiler'
 
     libraryDescription = 'Injector sample library'
 
