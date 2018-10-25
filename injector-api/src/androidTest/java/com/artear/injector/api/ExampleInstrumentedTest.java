@@ -1,4 +1,4 @@
-package com.artear.injector;
+package com.artear.injector.api;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.artear.injector", appContext.getPackageName());
+        assertEquals("com.artear.injector.api.test", appContext.getPackageName());
     }
 }

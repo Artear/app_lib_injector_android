@@ -7,7 +7,7 @@ bintray {
     publications = ['Bintray']
     pkg {
         repo = bintrayRepo
-        name = bintrayName
+        name = libraryName
         desc = libraryDescription
         websiteUrl = siteUrl
         vcsUrl = gitUrl

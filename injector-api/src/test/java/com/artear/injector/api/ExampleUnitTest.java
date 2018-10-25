@@ -1,4 +1,4 @@
-package com.artear.injector;
+package com.artear.injector.api;
 
 import org.junit.Test;
 
