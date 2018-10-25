@@ -51,12 +51,10 @@ jobs:
             - injector-compiler/build/outputs/aar
           key: aar-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
       - store_artifacts:
-          path:
-            - injector-api/build/outputs/aar
+          path: injector-api/build/outputs/aar
           destination: api/aar
       - store_artifacts:
-          path:
-            - injector-compiler/build/outputs/aar
+          path: injector-compiler/build/outputs/aar
           destination: compiler/aar
       - save_cache:
           paths:
@@ -64,12 +62,10 @@ jobs:
             - injector-compiler/build/libs
           key: artifacts-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
       - store_artifacts:
-          path:
-            - injector-api/build/libs
+          path: injector-api/build/libs
           destination: api/libs
       - store_artifacts:
-          path:
-            - injector-compiler/build/libs
+          path: injector-compiler/build/libs
           destination: compiler/libs
 
   tests:
@@ -83,7 +79,7 @@ jobs:
           name: Run Tests
           command: ./gradlew lint test
       - store_artifacts:
-          paths: sample/build/reports
+          path: sample/build/reports
           destination: reports
       - store_test_results:
           path: sample/build/test-results
