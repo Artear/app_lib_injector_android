@@ -1,5 +1,4 @@
 apply plugin: 'com.jfrog.bintray'
-apply plugin: 'com.github.dcendents.android-maven'
 
 bintray {
     user = project.hasProperty('bintrayUser') ?: System.getenv('BINTRAY_USER')
