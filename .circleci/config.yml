@@ -47,26 +47,15 @@ jobs:
           command: ./gradlew assemble
       - save_cache:
           paths:
-            - injector-api/build/outputs/aar
-            - injector-compiler/build/outputs/aar
-          key: aar-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
-      - store_artifacts:
-          path: injector-api/build/outputs/aar
-          destination: api/aar
-      - store_artifacts:
-          path: injector-compiler/build/outputs/aar
-          destination: compiler/aar
-      - save_cache:
-          paths:
             - injector-api/build/libs
             - injector-compiler/build/libs
-          key: artifacts-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
+          key: libs-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
       - store_artifacts:
           path: injector-api/build/libs
-          destination: api/libs
+          destination: api
       - store_artifacts:
           path: injector-compiler/build/libs
-          destination: compiler/libs
+          destination: compiler
 
   tests:
     <<: *defaults
@@ -98,9 +87,7 @@ jobs:
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "sample/build.gradle" }}
       - restore_cache:
-          key: aar-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
-      - restore_cache:
-          key: artifacts-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
+          key: libs-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
       - run:
           name: Upload library to bintray
           command: ./gradlew bintrayUpload
