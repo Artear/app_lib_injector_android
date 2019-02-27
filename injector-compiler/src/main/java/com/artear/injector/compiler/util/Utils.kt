@@ -60,13 +60,12 @@ internal object Utils {
         return pkg.qualifiedName.toString()
     }
 
-    fun isValidClass(typeElement: TypeElement, messager: Messager): Boolean {
-        if (typeElement.kind != ElementKind.CLASS) {
-            messager.printMessage(Diagnostic.Kind.ERROR, "Can only be applied to classes,  element: $typeElement ")
-            return false
-        }
-        return true
+}
+
+fun TypeElement.isValidClass(messager: Messager): Boolean {
+    if (kind != ElementKind.CLASS) {
+        messager.printMessage(Diagnostic.Kind.ERROR, "Can only be applied to classes, element: $this ")
+        return false
     }
-
-
+    return true
 }
