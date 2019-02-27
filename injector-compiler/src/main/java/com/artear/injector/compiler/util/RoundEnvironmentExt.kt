@@ -22,7 +22,7 @@ import javax.lang.model.element.TypeElement
 fun <T> RoundEnvironment.executeProcess(process: Process<T>) {
     getElementsAnnotatedWith(process.annotation)
             .filterIsInstance<TypeElement>()
-            .filter { Utils.isValidClass(it, process.messager) }
+            .filter { it.isValidClass(process.messager) }
             .map { process.buildAnnotationClass(it) }
             .forEach { process.createAnnotationFile(it) }
 
