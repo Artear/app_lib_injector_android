@@ -109,9 +109,6 @@ workflows:
       - release:
           requires:
             - download_dependencies
-      - check_dependencies:
-          requires:
-            - download_dependencies
       - tests:
           requires:
             - download_dependencies
