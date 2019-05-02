@@ -13,7 +13,7 @@ if (project.hasProperty("kotlin")) { //Kotlin libraries
         from sourceSets.main.allSource
     }
 
-    task javadocJar(type: Jar, dependsOn:javadoc) {
+    task javadocJar(type: Jar, dependsOn: javadoc) {
         classifier = 'javadoc'
         from "$buildDir/dokka"
     }

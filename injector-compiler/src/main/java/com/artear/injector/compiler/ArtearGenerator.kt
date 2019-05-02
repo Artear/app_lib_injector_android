@@ -139,7 +139,7 @@ internal object ArtearGenerator {
         val className = ClassName(annotationClass.packageName, annotationClass.className)
         val builder = FunSpec.builder("initialize")
                 .receiver(className)
-                builder.returns(className)
+        builder.returns(className)
                 .addModifiers(KModifier.INTERNAL)
 
         val webViewClassName = ClassName("android.webkit", "WebView")

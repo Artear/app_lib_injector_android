@@ -24,4 +24,4 @@ package com.artear.injector.compiler.process.model
  * is Int
  */
 class JsInterfaceClass(val packageName: String, val className: String, val key: String,
-                                val interfaceType: Pair<String, String>)
+                       val interfaceType: Pair<String, String>)
