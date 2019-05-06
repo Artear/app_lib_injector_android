@@ -1,0 +1,42 @@
+buildscript {
+
+    ext {
+
+        // -------- Library Version ---------
+        libraryVersion = '0.0.5'
+
+
+        // ------------ Kotlin --------------
+        kotlin_version = '1.3.31'
+        kotlinVersion = kotlin_version
+
+
+        // ------------ Gradle --------------
+        gradle_build_version = '3.3.2'
+
+
+        // ------------ Bintray -------------
+        bintrayVersion = '1.8.4'
+
+
+        // ------------ Dokka ---------------
+        dokkaVersion = '0.9.18'
+
+
+        // ---------- dcendents -------------
+        dcendentsVersion = '2.1'
+
+
+        // ------------- Test ---------------
+        junitVersion = '4.12'
+        extJunitVersion = '1.1.0'
+        testRunnerVersion = '1.1.1'
+        espressoCoreVersion = '3.1.1'
+
+
+        // ----------- Framework ------------
+        // AndroidX
+        appCompatVersion = '1.0.2'
+
+    }
+}
