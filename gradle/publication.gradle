@@ -9,40 +9,37 @@ dokka {
 
 task artearDoc(dependsOn: dokka) {
     doLast {
-        def artifact = project.ext.artifact
-        if (artifact == "injector-compiler") {
-            def lines = ["<html>\n",
-                         "<head>\n",
-                         "<meta charset=\"UTF-8\">\n",
-                         "<title>Injector libraries</title>\n",
-                         "<link rel=\"stylesheet\" href=\"./style.css\">",
-                         "</head>\n",
-                         "<body>\n",
-                         "<br/>\n",
-                         "<h3>Packages</h3>\n",
-                         "<table>\n",
-                         "<tbody>\n",
-                         "<tr>\n",
-                         "<td>\n",
-                         "<p><a href=\"./injector-api/index.html\">Injector Api</a></p>\n",
-                         "</td>\n",
-                         "</tr>\n",
-                         "</tbody>\n",
-                         "<tbody>\n",
-                         "<tr>\n",
-                         "<td>\n",
-                         "<p><a href=\"./injector-compiler/index.html\">Injector Compiler</a></p>\n",
-                         "</td>\n",
-                         "</tr>\n",
-                         "</tbody>\n",
-                         "</table>\n",
-                         "</body>\n",
-                         "</html>\n"]
+        def lines = ["<html>\n",
+                     "<head>\n",
+                     "<meta charset=\"UTF-8\">\n",
+                     "<title>Injector libraries</title>\n",
+                     "<link rel=\"stylesheet\" href=\"./style.css\">",
+                     "</head>\n",
+                     "<body>\n",
+                     "<br/>\n",
+                     "<h3>Packages</h3>\n",
+                     "<table>\n",
+                     "<tbody>\n",
+                     "<tr>\n",
+                     "<td>\n",
+                     "<p><a href=\"./injector-api/index.html\">Injector Api</a></p>\n",
+                     "</td>\n",
+                     "</tr>\n",
+                     "</tbody>\n",
+                     "<tbody>\n",
+                     "<tr>\n",
+                     "<td>\n",
+                     "<p><a href=\"./injector-compiler/index.html\">Injector Compiler</a></p>\n",
+                     "</td>\n",
+                     "</tr>\n",
+                     "</tbody>\n",
+                     "</table>\n",
+                     "</body>\n",
+                     "</html>\n"]
 
-            def file = file(new File("../docs/index.html"))
-            if (!file.exists()) {
-                lines.forEach { file.append(it) }
-            }
+        def file = file(new File("../docs/index.html"))
+        if (!file.exists()) {
+            lines.forEach { file.append(it) }
         }
     }
 }
