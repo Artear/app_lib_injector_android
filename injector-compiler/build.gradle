@@ -2,8 +2,8 @@ apply plugin: 'kotlin'
 
 dependencies {
     implementation project(':injector-api')
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.squareup:kotlinpoet:1.0.0-RC1'
+    implementation lib.kotlin.standardLib
+    implementation lib.square.kotlinpoet
 }
 
 group = publishedGroupId

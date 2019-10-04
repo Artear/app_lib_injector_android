@@ -15,6 +15,10 @@
  */
 package com.artear.injector.api
 
+
 @Retention(AnnotationRetention.SOURCE)
 @Target(AnnotationTarget.CLASS)
+/**
+ * Js
+ */
 annotation class JsInterface(val key: String)

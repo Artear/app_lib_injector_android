@@ -61,7 +61,7 @@ class JsInterfaceProcess(processingEnv: ProcessingEnvironment) : Process<JsInter
         checkNotNull(typeInterface) {
             "Can not be null the type interface"
         }
-        return Pair(element.qualifiedName.toString().substringAfterLast("."), typeInterface!!)
+        return Pair(element.qualifiedName.toString().substringAfterLast("."), typeInterface)
     }
 
     override fun createAnnotationFile(annotationClass: JsInterfaceClass) {

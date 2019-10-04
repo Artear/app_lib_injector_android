@@ -1,0 +1,10 @@
+$dokka.format:html
+$dokka.linkExtension:html
+$dokka.location:com.artear.injector.compiler.util$error(javax.annotation.processing.Messager, kotlin.String)com.artear.injector.compiler.util/javax.annotation.processing.-messager/error.html
+$dokka.location:com.artear.injector.compiler.util$executeProcess(javax.annotation.processing.RoundEnvironment, com.artear.injector.compiler.process.Process((com.artear.injector.compiler.util.executeProcess.T)))com.artear.injector.compiler.util/javax.annotation.processing.-round-environment/execute-process.html
+$dokka.location:com.artear.injector.compiler.util$isValidClass(javax.lang.model.element.TypeElement, javax.annotation.processing.Messager)com.artear.injector.compiler.util/javax.lang.model.element.-type-element/is-valid-class.html
+$dokka.location:com.artear.injector.compiler.util$log(javax.annotation.processing.Messager, kotlin.String)com.artear.injector.compiler.util/javax.annotation.processing.-messager/log.html
+com.artear.injector.compiler
+com.artear.injector.compiler.process
+com.artear.injector.compiler.process.model
+com.artear.injector.compiler.util

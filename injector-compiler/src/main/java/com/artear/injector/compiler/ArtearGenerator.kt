@@ -19,7 +19,10 @@ import com.artear.injector.compiler.process.model.JsEventManagerClass
 import com.artear.injector.compiler.process.model.JsInterfaceClass
 import com.squareup.kotlinpoet.*
 
-
+/**
+ *
+ * ArtearGenerator
+ */
 internal object ArtearGenerator {
 
     private const val CLASS_NAME_JS_SUFFIX = "Js"
@@ -34,7 +37,7 @@ internal object ArtearGenerator {
 
         builder.addSuperinterface(commandClassName)
 
-        val contextClassName = ClassName("android.content", "Context").asNullable()
+        val contextClassName = ClassName("android.content", "Context")
         val contextNameParam = "context"
         val contextParam = ParameterSpec.builder(contextNameParam, contextClassName,
                 KModifier.OVERRIDE).build()
@@ -52,7 +55,7 @@ internal object ArtearGenerator {
                 .initializer(targetNameParam)
                 .build()
 
-        val delegateClassName = ClassName(upPackageName, "WebJsDispatcher").asNullable()
+        val delegateClassName = ClassName(upPackageName, "WebJsDispatcher")
         val delegateNameParam = "delegate"
         val delegateParam = ParameterSpec.builder(delegateNameParam, delegateClassName,
                 KModifier.OVERRIDE)
