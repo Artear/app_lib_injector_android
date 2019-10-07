@@ -15,6 +15,19 @@
  */
 package com.artear.injector.api
 
+/**
+ * Use them to establish a suitable communication between a single javascript event for your web
+ * loaded in a webview and an object in your application, making a clean code and a single
+ * responsibility.
+ *
+ * The ArtearProcessor use this annotation to generate an extra file for execute a traditional
+ * JavascriptInterface used in webview.
+ *
+ * Note that the process register each class annotated whit it.
+ *
+ * @param key the javascript event name
+ *
+ */
 @Retention(AnnotationRetention.SOURCE)
 @Target(AnnotationTarget.CLASS)
 annotation class JsInterface(val key: String)

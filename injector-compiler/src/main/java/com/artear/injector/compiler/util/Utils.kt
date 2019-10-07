@@ -23,7 +23,9 @@ import javax.lang.model.element.TypeElement
 import javax.lang.model.util.Elements
 import javax.tools.Diagnostic
 
-
+/**
+ * Useful class to get values of annotation classes
+ */
 internal object Utils {
 
     fun <T> findAnnotationValue(element: Element, annotationClass: String?,
@@ -52,6 +54,9 @@ internal object Utils {
         return null
     }
 
+    /**
+     * @return The Package name of [typeElement]
+     */
     fun packageName(elementUtils: Elements, typeElement: Element): String {
         val pkg = elementUtils.getPackageOf(typeElement)
         if (pkg.isUnnamed) {
@@ -62,6 +67,9 @@ internal object Utils {
 
 }
 
+/**
+ * This is [TypeElement] extension. Use it like a filter for only [ElementKind.CLASS] kind.
+ */
 fun TypeElement.isValidClass(messager: Messager): Boolean {
     if (kind != ElementKind.CLASS) {
         messager.printMessage(Diagnostic.Kind.ERROR, "Can only be applied to classes, element: $this ")

@@ -19,11 +19,24 @@ import com.artear.injector.compiler.process.model.JsEventManagerClass
 import com.artear.injector.compiler.process.model.JsInterfaceClass
 import com.squareup.kotlinpoet.*
 
-
+/**
+ * This generator works like a helper to make the necessary poet objects for all process.
+ *
+ * Like -> JsInterfaceProcess and JsEventManagerProcess
+ *
+ * @see [Taggable] extensions in koltin poet
+ */
 internal object ArtearGenerator {
 
+    /**
+     * This suffix will be added to each class that have an [JsInterface] annotation
+     */
     private const val CLASS_NAME_JS_SUFFIX = "Js"
 
+    /**
+     * Generate a handy object [TypeSpec] with [jsInterfaceClass] model.
+     * Based on [WebWrapp](https://github.com/Artear/app_lib_webwrap_android) library.
+     */
     fun generateJsInterfaceTypeSpec(jsInterfaceClass: JsInterfaceClass): TypeSpec {
 
         val builder = TypeSpec.classBuilder(jsInterfaceClass.className + CLASS_NAME_JS_SUFFIX)
@@ -34,7 +47,7 @@ internal object ArtearGenerator {
 
         builder.addSuperinterface(commandClassName)
 
-        val contextClassName = ClassName("android.content", "Context").asNullable()
+        val contextClassName = ClassName("android.content", "Context")
         val contextNameParam = "context"
         val contextParam = ParameterSpec.builder(contextNameParam, contextClassName,
                 KModifier.OVERRIDE).build()
@@ -52,7 +65,7 @@ internal object ArtearGenerator {
                 .initializer(targetNameParam)
                 .build()
 
-        val delegateClassName = ClassName(upPackageName, "WebJsDispatcher").asNullable()
+        val delegateClassName = ClassName(upPackageName, "WebJsDispatcher")
         val delegateNameParam = "delegate"
         val delegateParam = ParameterSpec.builder(delegateNameParam, delegateClassName,
                 KModifier.OVERRIDE)
@@ -133,6 +146,10 @@ internal object ArtearGenerator {
         return builder.build()
     }
 
+    /**
+     * Generate a handy object [FunSpec] with [JsEventManagerClass] model.
+     * Based on [WebWrapp](https://github.com/Artear/app_lib_webwrap_android) library.
+     */
     fun generateJsEventManagerTypeSpec(annotationClass: JsEventManagerClass,
                                        jsInterfaceClassList: MutableList<JsInterfaceClass>): FunSpec {
 
@@ -164,6 +181,11 @@ internal object ArtearGenerator {
         return builder.build()
     }
 
+    /**
+     * Generate a handy object [FunSpec] with [JsEventManagerClass] model for make an extension
+     * to WebWrapper
+     * Based on [WebWrapp](https://github.com/Artear/app_lib_webwrap_android) library.
+     */
     fun generateWebWrapperTypeSpec(annotationClass: JsEventManagerClass): FunSpec {
         val className = ClassName("com.artear.webwrap", "WebWrapper")
         //TODO add all project classes and all webwrap classes

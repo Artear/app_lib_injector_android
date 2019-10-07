@@ -26,7 +26,20 @@ import javax.annotation.processing.RoundEnvironment
 import javax.lang.model.SourceVersion
 import javax.lang.model.element.TypeElement
 
-
+/**
+ * This is the start point of this library.
+ *
+ * There is a file, in resources folder, META-INF.services, called Processor that you must to
+ * set this class for the annotation processor take your class and init the routine.
+ *
+ * The main process is [executeProcess].
+ *
+ * *IMPORTANT*: this a beta version of how create classes with an annotation processor. If any class
+ * is modify in [WebWrapper](https://github.com/Artear/app_lib_webwrap_android) maybe you must
+ * change some generated code classes in this library.
+ *
+ * @author David Tolchinsky
+ */
 class ArtearProcessor : AbstractProcessor() {
 
     @Synchronized
@@ -36,15 +49,25 @@ class ArtearProcessor : AbstractProcessor() {
 
     override fun getSupportedSourceVersion(): SourceVersion = SourceVersion.latestSupported()
 
+    /**
+     * Configuration for generate code across kapt
+     */
     override fun getSupportedOptions(): MutableSet<String> {
         return mutableSetOf(Config.KAPT_KOTLIN_GENERATED_OPTION_NAME)
     }
 
+    /**
+     * Here you must to put all annotation that you want process to generate an additional
+     * functionality.
+     */
     override fun getSupportedAnnotationTypes(): Set<String> {
         return setOf(JsInterface::class.java.canonicalName,
                 JsEventManager::class.java.canonicalName)
     }
 
+    /**
+     * The main function to process the recollected data of your application.
+     */
     override fun process(annotations: MutableSet<out TypeElement>, roundEnv: RoundEnvironment): Boolean {
         val jsInterfaceProcess = JsInterfaceProcess(processingEnv)
         val jsEventManagerProcess = JsEventManagerProcess(processingEnv, jsInterfaceProcess)

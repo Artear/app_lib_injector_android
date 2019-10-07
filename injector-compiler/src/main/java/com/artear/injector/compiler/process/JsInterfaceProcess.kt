@@ -26,11 +26,20 @@ import javax.lang.model.element.TypeElement
 import javax.lang.model.type.DeclaredType
 import javax.lang.model.type.TypeMirror
 
-
+/**
+ * Process JsInterface annotations. The goal is make an extra file for each one to process an
+ * execute the javascript event in a single method.
+ */
 class JsInterfaceProcess(processingEnv: ProcessingEnvironment) : Process<JsInterfaceClass>(processingEnv) {
 
+    /**
+     * The annotation to process JsInterface
+     */
     override val annotation: Class<out Annotation> = JsInterface::class.java
 
+    /**
+     * The list to add an initialize a JsEventManager in [JsEventManagerProcess.createAnnotationFile]
+     */
     val jsInterfaceClassList = mutableListOf<JsInterfaceClass>()
 
     override fun buildAnnotationClass(typeElement: TypeElement): JsInterfaceClass {
@@ -61,9 +70,12 @@ class JsInterfaceProcess(processingEnv: ProcessingEnvironment) : Process<JsInter
         checkNotNull(typeInterface) {
             "Can not be null the type interface"
         }
-        return Pair(element.qualifiedName.toString().substringAfterLast("."), typeInterface!!)
+        return Pair(element.qualifiedName.toString().substringAfterLast("."), typeInterface)
     }
 
+    /**
+     * Generate a file based on an event.
+     */
     override fun createAnnotationFile(annotationClass: JsInterfaceClass) {
         val jsInterfaceTypeSpec = ArtearGenerator.generateJsInterfaceTypeSpec(annotationClass)
         val file = FileSpec.builder(annotationClass.packageName, jsInterfaceTypeSpec.name!!)

@@ -1,0 +1,125 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Process - injector-compiler</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">injector-compiler</a>&nbsp;/&nbsp;<a href="../index.html">com.artear.injector.compiler.process</a>&nbsp;/&nbsp;<a href="./index.html">Process</a><br/>
+<br/>
+<h1>Process</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">Process</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Is a simple class to model each annotation to process.
+Extend them if need a new annotation flow process.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">Process</span><span class="symbol">(</span><span class="identifier" id="com.artear.injector.compiler.process.Process$<init>(javax.annotation.processing.ProcessingEnvironment)/processingEnv">processingEnv</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/javax/annotation/processing/ProcessingEnvironment.html"><span class="identifier">ProcessingEnvironment</span></a><span class="symbol">)</span></code>
+<p>Is a simple class to model each annotation to process.
+Extend them if need a new annotation flow process.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="annotation.html">annotation</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">annotation</span><span class="symbol">: </span><a href="https://developer.android.com/reference/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-annotation/index.html"><span class="identifier">Annotation</span></a><span class="symbol">&gt;</span></code>
+<p>The annotation to process.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="elements.html">elements</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">elements</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/util/Elements.html"><span class="identifier">Elements</span></a></code>
+<p>Useful to extract package name.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="messager.html">messager</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">messager</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/javax/annotation/processing/Messager.html"><span class="identifier">Messager</span></a></code>
+<p>Useful to print console message.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="processing-env.html">processingEnv</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">processingEnv</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/javax/annotation/processing/ProcessingEnvironment.html"><span class="identifier">ProcessingEnvironment</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="type-utils.html">typeUtils</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">typeUtils</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/util/Types.html"><span class="identifier">Types</span></a></code>
+<p>Useful to get TypeElement from TypeMirror</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="build-annotation-class.html">buildAnnotationClass</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">buildAnnotationClass</span><span class="symbol">(</span><span class="identifier" id="com.artear.injector.compiler.process.Process$buildAnnotationClass(javax.lang.model.element.TypeElement)/typeElement">typeElement</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/TypeElement.html"><span class="identifier">TypeElement</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html#T"><span class="identifier">T</span></a></code>
+<p>Create an annotation class model.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="create-annotation-file.html">createAnnotationFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">createAnnotationFile</span><span class="symbol">(</span><span class="identifier" id="com.artear.injector.compiler.process.Process$createAnnotationFile(com.artear.injector.compiler.process.Process.T)/annotationClass">annotationClass</span><span class="symbol">:</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Use for make a file and extend the functionality of that <a href="create-annotation-file.html#com.artear.injector.compiler.process.Process$createAnnotationFile(com.artear.injector.compiler.process.Process.T)/annotationClass">annotationClass</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-js-event-manager-process/index.html">JsEventManagerProcess</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">JsEventManagerProcess</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Process</span></a><span class="symbol">&lt;</span><a href="../../com.artear.injector.compiler.process.model/-js-event-manager-class/index.html"><span class="identifier">JsEventManagerClass</span></a><span class="symbol">&gt;</span></code>
+<p>Use JsEventManager and process them.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-js-interface-process/index.html">JsInterfaceProcess</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">JsInterfaceProcess</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Process</span></a><span class="symbol">&lt;</span><a href="../../com.artear.injector.compiler.process.model/-js-interface-class/index.html"><span class="identifier">JsInterfaceClass</span></a><span class="symbol">&gt;</span></code>
+<p>Process JsInterface annotations. The goal is make an extra file for each one to process an
+execute the javascript event in a single method.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

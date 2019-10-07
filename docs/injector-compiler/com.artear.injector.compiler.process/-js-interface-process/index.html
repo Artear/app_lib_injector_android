@@ -1,0 +1,115 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>JsInterfaceProcess - injector-compiler</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">injector-compiler</a>&nbsp;/&nbsp;<a href="../index.html">com.artear.injector.compiler.process</a>&nbsp;/&nbsp;<a href="./index.html">JsInterfaceProcess</a><br/>
+<br/>
+<h1>JsInterfaceProcess</h1>
+<code><span class="keyword">class </span><span class="identifier">JsInterfaceProcess</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-process/index.html"><span class="identifier">Process</span></a><span class="symbol">&lt;</span><a href="../../com.artear.injector.compiler.process.model/-js-interface-class/index.html"><span class="identifier">JsInterfaceClass</span></a><span class="symbol">&gt;</span></code>
+<p>Process JsInterface annotations. The goal is make an extra file for each one to process an
+execute the javascript event in a single method.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">JsInterfaceProcess</span><span class="symbol">(</span><span class="identifier" id="com.artear.injector.compiler.process.JsInterfaceProcess$<init>(javax.annotation.processing.ProcessingEnvironment)/processingEnv">processingEnv</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/javax/annotation/processing/ProcessingEnvironment.html"><span class="identifier">ProcessingEnvironment</span></a><span class="symbol">)</span></code>
+<p>Process JsInterface annotations. The goal is make an extra file for each one to process an
+execute the javascript event in a single method.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="annotation.html">annotation</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">annotation</span><span class="symbol">: </span><a href="https://developer.android.com/reference/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-annotation/index.html"><span class="identifier">Annotation</span></a><span class="symbol">&gt;</span></code>
+<p>The annotation to process JsInterface</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="js-interface-class-list.html">jsInterfaceClassList</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">jsInterfaceClassList</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../../com.artear.injector.compiler.process.model/-js-interface-class/index.html"><span class="identifier">JsInterfaceClass</span></a><span class="symbol">&gt;</span></code>
+<p>The list to add an initialize a JsEventManager in <a href="../-js-event-manager-process/create-annotation-file.html">JsEventManagerProcess.createAnnotationFile</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-process/elements.html">elements</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">elements</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/util/Elements.html"><span class="identifier">Elements</span></a></code>
+<p>Useful to extract package name.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-process/messager.html">messager</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">messager</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/javax/annotation/processing/Messager.html"><span class="identifier">Messager</span></a></code>
+<p>Useful to print console message.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-process/processing-env.html">processingEnv</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">processingEnv</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/javax/annotation/processing/ProcessingEnvironment.html"><span class="identifier">ProcessingEnvironment</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-process/type-utils.html">typeUtils</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">typeUtils</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/util/Types.html"><span class="identifier">Types</span></a></code>
+<p>Useful to get TypeElement from TypeMirror</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="build-annotation-class.html">buildAnnotationClass</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">buildAnnotationClass</span><span class="symbol">(</span><span class="identifier" id="com.artear.injector.compiler.process.JsInterfaceProcess$buildAnnotationClass(javax.lang.model.element.TypeElement)/typeElement">typeElement</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/TypeElement.html"><span class="identifier">TypeElement</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../com.artear.injector.compiler.process.model/-js-interface-class/index.html"><span class="identifier">JsInterfaceClass</span></a></code>
+<p>Create an annotation class model.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="create-annotation-file.html">createAnnotationFile</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">createAnnotationFile</span><span class="symbol">(</span><span class="identifier" id="com.artear.injector.compiler.process.JsInterfaceProcess$createAnnotationFile(com.artear.injector.compiler.process.model.JsInterfaceClass)/annotationClass">annotationClass</span><span class="symbol">:</span>&nbsp;<a href="../../com.artear.injector.compiler.process.model/-js-interface-class/index.html"><span class="identifier">JsInterfaceClass</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Generate a file based on an event.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

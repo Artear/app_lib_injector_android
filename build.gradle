@@ -8,12 +8,12 @@ buildscript {
     }
 
     dependencies {
-        classpath "com.android.tools.build:gradle:$gradle_build_version"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath lib.android.toolsBuildGradle
+        classpath lib.kotlin.plugin
 
-        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:$bintrayVersion"
-        classpath "com.github.dcendents:android-maven-gradle-plugin:$dcendentsVersion"
-        classpath "org.jetbrains.dokka:dokka-android-gradle-plugin:$dokkaVersion"
+        classpath lib.plugin.bintray
+        classpath lib.plugin.dcendents
+        classpath lib.plugin.dokka
     }
 
 }

@@ -1,0 +1,83 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ArtearProcessor - injector-compiler</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">injector-compiler</a>&nbsp;/&nbsp;<a href="../index.html">com.artear.injector.compiler</a>&nbsp;/&nbsp;<a href="./index.html">ArtearProcessor</a><br/>
+<br/>
+<h1>ArtearProcessor</h1>
+<code><span class="keyword">class </span><span class="identifier">ArtearProcessor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/javax/annotation/processing/AbstractProcessor.html"><span class="identifier">AbstractProcessor</span></a></code>
+<p>This is the start point of this library.</p>
+<p>There is a file, in resources folder, META-INF.services, called Processor that you must to
+set this class for the annotation processor take your class and init the routine.</p>
+<p>The main process is <a href="../../com.artear.injector.compiler.util/javax.annotation.processing.-round-environment/execute-process.html">executeProcess</a>.</p>
+<p><em>IMPORTANT</em>: this a beta version of how create classes with an annotation processor. If any class
+is modify in <a href="https://github.com/Artear/app_lib_webwrap_android">WebWrapper</a> maybe you must
+change some generated code classes in this library.</p>
+<p><strong>Author</strong><br/>
+David Tolchinsky</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ArtearProcessor</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>This is the start point of this library.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-supported-annotation-types.html">getSupportedAnnotationTypes</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getSupportedAnnotationTypes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html"><span class="identifier">Set</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Here you must to put all annotation that you want process to generate an additional
+functionality.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-supported-options.html">getSupportedOptions</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getSupportedOptions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Configuration for generate code across kapt</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-supported-source-version.html">getSupportedSourceVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getSupportedSourceVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/SourceVersion.html"><span class="identifier">SourceVersion</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="init.html">init</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">init</span><span class="symbol">(</span><span class="identifier" id="com.artear.injector.compiler.ArtearProcessor$init(javax.annotation.processing.ProcessingEnvironment)/processingEnv">processingEnv</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/javax/annotation/processing/ProcessingEnvironment.html"><span class="identifier">ProcessingEnvironment</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="process.html">process</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">process</span><span class="symbol">(</span><span class="identifier" id="com.artear.injector.compiler.ArtearProcessor$process(kotlin.collections.MutableSet((javax.lang.model.element.TypeElement)), javax.annotation.processing.RoundEnvironment)/annotations">annotations</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/TypeElement.html"><span class="identifier">TypeElement</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.artear.injector.compiler.ArtearProcessor$process(kotlin.collections.MutableSet((javax.lang.model.element.TypeElement)), javax.annotation.processing.RoundEnvironment)/roundEnv">roundEnv</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/javax/annotation/processing/RoundEnvironment.html"><span class="identifier">RoundEnvironment</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>The main function to process the recollected data of your application.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
