@@ -25,18 +25,39 @@ import javax.annotation.processing.ProcessingEnvironment
 import javax.lang.model.element.TypeElement
 
 
+/**
+ * Use JsEventManager and process them.
+ *
+ * The aim is extend a simple function for initialize them and add each JsInterface like a new
+ * command. Also use a function addJavascriptInterfaces to attach the js flow events between the
+ * webview and that manager.
+ *
+ * See: WebWrap [library](https://github.com/Artear/app_lib_webwrap_android) - WebJsEventManager
+ */
 class JsEventManagerProcess(processingEnv: ProcessingEnvironment,
                             private val jsInterfaceProcess: JsInterfaceProcess) :
         Process<JsEventManagerClass>(processingEnv) {
 
+    /**
+     * The annotation to process: JsEventManager
+     */
     override val annotation: Class<out Annotation> = JsEventManager::class.java
 
+    /**
+     * Given a [TypeElement], get the package name and class name and instance a new model.
+     *
+     * @return A [JsEventManagerClass] model
+     */
     override fun buildAnnotationClass(typeElement: TypeElement): JsEventManagerClass {
         val packageName = Utils.packageName(elements, typeElement)
         val className = typeElement.asType().toString().split(".").last()
         return JsEventManagerClass(packageName, className)
     }
 
+    /**
+     * Make two files, one extended an event manager and another extended the WebWrapper
+     * This second extension use the first to initialize and load all js interfaces.
+     */
     override fun createAnnotationFile(annotationClass: JsEventManagerClass) {
         val jsEventManagerFuncSpec = ArtearGenerator.generateJsEventManagerTypeSpec(
                 annotationClass, jsInterfaceProcess.jsInterfaceClassList)

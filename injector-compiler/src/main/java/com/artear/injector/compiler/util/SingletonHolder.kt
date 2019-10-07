@@ -15,12 +15,17 @@
  */
 package com.artear.injector.compiler.util
 
-
+/**
+ * Powerful singleton to retain the owner creator.
+ */
 open class SingletonHolder<out T, in A>(creator: (A) -> T) {
     private var creator: ((A) -> T)? = creator
     @Volatile
     private var instance: T? = null
 
+    /**
+     * Use a unique instance of your creator. The access occurs in a synchronized way
+     */
     fun getInstance(arg: A): T {
         val i = instance
         if (i != null) {

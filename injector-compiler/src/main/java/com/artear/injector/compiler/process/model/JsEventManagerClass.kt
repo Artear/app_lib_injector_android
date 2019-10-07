@@ -15,4 +15,8 @@
  */
 package com.artear.injector.compiler.process.model
 
+/**
+ * @param packageName The original package name of the class that have "com.artear.annotations.JsEventManager"
+ * @param className The name of the class
+ */
 data class JsEventManagerClass(val packageName: String, val className: String)

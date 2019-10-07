@@ -16,7 +16,7 @@
 package com.artear.injector.compiler.process.model
 
 /**
- * @param packageName The original package name of the class that have [com.artear.annotations.JsInterface]
+ * @param packageName The original package name of the class that have "com.artear.annotations.JsInterface"
  * @param className The name of the class
  * @param key The key word of annotation
  * @param interfaceType Its a pair, first is the type interface, second is the

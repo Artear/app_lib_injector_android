@@ -15,6 +15,14 @@
  */
 package com.artear.injector.api
 
+/**
+ * A JsEventManager is an entity that control the communication between the webview and your
+ * javascript events. It is part of divide each responsibility idea.
+ *
+ * Used in [WebWrapper](https://github.com/Artear/app_lib_webwrap_android)
+ *
+ * @see [JsInterface]
+ */
 @Retention(AnnotationRetention.SOURCE)
 @Target(AnnotationTarget.CLASS)
 annotation class JsEventManager

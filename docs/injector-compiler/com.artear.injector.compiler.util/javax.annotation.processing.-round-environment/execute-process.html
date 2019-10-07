@@ -10,5 +10,11 @@
 <h1>executeProcess</h1>
 <a name="com.artear.injector.compiler.util$executeProcess(javax.annotation.processing.RoundEnvironment, com.artear.injector.compiler.process.Process((com.artear.injector.compiler.util.executeProcess.T)))"></a>
 <code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <a href="https://docs.oracle.com/javase/6/docs/api/javax/annotation/processing/RoundEnvironment.html"><span class="identifier">RoundEnvironment</span></a><span class="symbol">.</span><span class="identifier">executeProcess</span><span class="symbol">(</span><span class="identifier" id="com.artear.injector.compiler.util$executeProcess(javax.annotation.processing.RoundEnvironment, com.artear.injector.compiler.process.Process((com.artear.injector.compiler.util.executeProcess.T)))/process">process</span><span class="symbol">:</span>&nbsp;<a href="../../com.artear.injector.compiler.process/-process/index.html"><span class="identifier">Process</span></a><span class="symbol">&lt;</span><a href="execute-process.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Function extension of RoundEnvironment that execute a <a href="../../com.artear.injector.compiler.process/-process/index.html">Process</a>.</p>
+<p>Execute in this order.</p>
+<p>1 - Get the Elements for the annotation class.</p>
+<p>2/3 - Filter by <a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/TypeElement.html">TypeElement</a> instance and then filter by is <a href="../javax.lang.model.element.-type-element/is-valid-class.html">isValidClass</a>.</p>
+<p>4 - Map each element and transform in annotation class model.</p>
+<p>5 - Use that model to create a file that extends functionality</p>
 </BODY>
 </HTML>

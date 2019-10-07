@@ -32,6 +32,13 @@ import javax.lang.model.element.TypeElement
  * There is a file, in resources folder, META-INF.services, called Processor that you must to
  * set this class for the annotation processor take your class and init the routine.
  *
+ * The main process is [executeProcess].
+ *
+ * *IMPORTANT*: this a beta version of how create classes with an annotation processor. If any class
+ * is modify in [WebWrapper](https://github.com/Artear/app_lib_webwrap_android) maybe you must
+ * change some generated code classes in this library.
+ *
+ * @author David Tolchinsky
  */
 class ArtearProcessor : AbstractProcessor() {
 

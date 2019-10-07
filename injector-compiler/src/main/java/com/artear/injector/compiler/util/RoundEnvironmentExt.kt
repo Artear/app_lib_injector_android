@@ -19,6 +19,20 @@ import com.artear.injector.compiler.process.Process
 import javax.annotation.processing.RoundEnvironment
 import javax.lang.model.element.TypeElement
 
+/**
+ * Function extension of RoundEnvironment that execute a [Process].
+ *
+ * Execute in this order.
+ *
+ * 1 - Get the Elements for the annotation class.
+ *
+ * 2/3 - Filter by [TypeElement] instance and then filter by is [isValidClass].
+ *
+ * 4 - Map each element and transform in annotation class model.
+ *
+ * 5 - Use that model to create a file that extends functionality
+ *
+ */
 fun <T> RoundEnvironment.executeProcess(process: Process<T>) {
     getElementsAnnotatedWith(process.annotation)
             .filterIsInstance<TypeElement>()
