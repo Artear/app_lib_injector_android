@@ -47,7 +47,7 @@ internal object ArtearGenerator {
 
         builder.addSuperinterface(commandClassName)
 
-        val contextClassName = ClassName("android.content", "Context")
+        val contextClassName = ClassName("android.content", "Context").copy(nullable = true)
         val contextNameParam = "context"
         val contextParam = ParameterSpec.builder(contextNameParam, contextClassName,
                 KModifier.OVERRIDE).build()
@@ -65,7 +65,7 @@ internal object ArtearGenerator {
                 .initializer(targetNameParam)
                 .build()
 
-        val delegateClassName = ClassName(upPackageName, "WebJsDispatcher")
+        val delegateClassName = ClassName(upPackageName, "WebJsDispatcher").copy(nullable = true)
         val delegateNameParam = "delegate"
         val delegateParam = ParameterSpec.builder(delegateNameParam, delegateClassName,
                 KModifier.OVERRIDE)
